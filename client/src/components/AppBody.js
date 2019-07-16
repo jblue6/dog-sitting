@@ -11,7 +11,11 @@ class AppBody extends Component {
     return (
       <div>
         <h1>{this.props.data ? this.props.data[0].value : "Loading"}</h1>
-        <div>Title loaded from mongodb in the cloud</div>
+        <div>
+          {this.props.data
+            ? "Title loaded from mongodb in the cloud"
+            : "Cannot retrieve data from mongodb"}
+        </div>
       </div>
     );
   }
