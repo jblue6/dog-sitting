@@ -1,0 +1,22 @@
+{
+  "name": "dog-sitting",
+  "version": "1.0.0",
+  "description": "dog-sitting-website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jblue6/dog-sitting.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jblue6/dog-sitting/issues"
+  },
+  "homepage": "https://github.com/jblue6/dog-sitting#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
