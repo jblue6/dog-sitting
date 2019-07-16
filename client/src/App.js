@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AppNavBar from "./components/AppNavBar";
+import AppBody from "./components/AppBody";
 import { Container } from "reactstrap";
 
 import { Provider } from "react-redux";
@@ -15,7 +16,7 @@ class App extends Component {
         <div className="App">
           <AppNavBar />
           <Container>
-            <h1>Blue Dog Sitting</h1>
+            <AppBody />
           </Container>
         </div>
       </Provider>
