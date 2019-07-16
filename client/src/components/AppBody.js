@@ -10,7 +10,7 @@ class AppBody extends Component {
   render() {
     return (
       <div>
-        <h1>{this.props.data ? this.props.data[0].value : "Loading"}</h1>
+        <h1>{this.props.data ? this.props.data.Title : "Loading"}</h1>
         <div>
           {this.props.data
             ? "Title loaded from mongodb in the cloud"
