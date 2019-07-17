@@ -2,13 +2,14 @@ import { GET_DATA } from "../actions/types";
 
 const initialState = {};
 
-export default function (state = initialState, action) {
-  switch (action.type) {
+// destructured type and payload from initial state
+export default function (state = initialState, { type, payload }) {
+  switch (type) {
     case GET_DATA:
-      console.log(action.payload);
+      // add data to the state  
       return {
         ...state,
-        ...action.payload
+        ...payload
       };
     default:
       return state;
