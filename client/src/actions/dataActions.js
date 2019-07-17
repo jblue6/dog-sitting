@@ -6,7 +6,6 @@ export const getData = () => dispatch => {
   axios
     .get("/api/data")
     .then(res => {
-      manipulateData(res.data);
       dispatch({
         type: GET_DATA,
         payload: manipulateData(res.data)
@@ -19,10 +18,6 @@ export const getData = () => dispatch => {
 
 const manipulateData = data => {
   let obj = {};
-  data.map(each => {
-    console.log(each);
-    obj[each.title] = each.value;
-  });
-  console.log(obj);
+  data.forEach((item, index) => obj[item.title] = item.value);
   return obj;
 };

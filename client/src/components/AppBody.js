@@ -4,32 +4,35 @@ import { getData } from "../actions/dataActions";
 
 class AppBody extends Component {
   componentDidMount() {
-    this.props.getData();
+    this.props.onComponentMount();
   }
 
   render() {
-    return (
-      <div>
-        <h1>{this.props.data ? this.props.data.Title : "Loading"}</h1>
+    // don't try and render until the data has loaded
+    if (this.props.data) {
+      return (
         <div>
-          {this.props.data
-            ? "Title loaded from mongodb in the cloud"
-            : "Cannot retrieve data from mongodb"}
+          <h1>{this.props.data.Title}</h1>
+          <div>
+            {"Title loaded from mongodb in the cloud"}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
+// map the state of the store to compoennts props so the component can access them
 const mapStateToProps = state => ({
-  data: state.data.data
+  data: state.data
 });
 
-const mapDispatchToProps = (state, dispatch) => ({
-  getData
-});
+// map redux actions to component props, so the component can call them
+const mapActionsToProps = {
+  onComponentMount: getData
+};
 
 export default connect(
   mapStateToProps,
-  { getData }
+  mapActionsToProps
 )(AppBody);
