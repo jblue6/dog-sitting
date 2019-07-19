@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getData } from "../actions/dataActions";
 import { bindActionCreators } from "redux"
 import PricesTable from "./PricesTable";
+import PropTypes from "prop-types";
 
 class AppBody extends Component {
   componentDidMount() {
@@ -10,20 +11,23 @@ class AppBody extends Component {
   }
 
   render() {
-    // don't try and render until the data has loaded
-    if (this.props.data) {
-      return (
+    const { data } = this.props;
+    return (
+      <div>
+        <h1>{data.Title}</h1>
         <div>
-          <h1>{this.props.data.Title}</h1>
-          <div>
-            Title loaded from mongodb in the cloud
+          Title loaded from mongodb in the cloud
           </div>
-          <PricesTable />
-        </div>
-      );
-    }
+        <PricesTable />
+      </div>
+    );
   }
 }
+
+AppBody.propTypes = {
+  getData: PropTypes.func.isRequired,
+  data: PropTypes.object.isRequired
+};
 
 // map the state of the store to compoennts props so the component can access them
 const mapStateToProps = state => ({
