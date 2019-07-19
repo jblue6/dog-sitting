@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getData } from "../actions/dataActions";
+import { getPrices } from "../actions/pricesActions";
 import { bindActionCreators } from "redux"
 
 class AppBody extends Component {
   componentDidMount() {
-    this.props.onComponentMount();
+    this.props.getData();
+    this.props.getPrices();
   }
 
   render() {
@@ -31,7 +33,8 @@ const mapStateToProps = state => ({
 // map redux actions to component props, so the component can call them
 const mapActionsToProps = (dispatch, props) => {
   return bindActionCreators({
-    onComponentMount: getData
+    getData: getData,
+    getPrices: getPrices
   }, dispatch);
 };
 
