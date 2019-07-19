@@ -1,5 +1,4 @@
 // 52.72.145.109 bluedogsitting.uk/
-
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -21,6 +20,7 @@ mongoose
 
 // use routes
 app.use("/api/data", require("./routes/api/data"));
+app.use("/api/prices", require("./routes/api/prices"));
 
 // serve static assets if in production
 if (process.env.NODE_ENV === "production") {
