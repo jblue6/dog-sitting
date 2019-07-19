@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getData } from "../actions/dataActions";
-import { getPrices } from "../actions/pricesActions";
 import { bindActionCreators } from "redux"
+import PricesTable from "./PricesTable";
 
 class AppBody extends Component {
   componentDidMount() {
     this.props.getData();
-    this.props.getPrices();
   }
 
   render() {
@@ -17,8 +16,9 @@ class AppBody extends Component {
         <div>
           <h1>{this.props.data.Title}</h1>
           <div>
-            {"Title loaded from mongodb in the cloud"}
+            Title loaded from mongodb in the cloud
           </div>
+          <PricesTable />
         </div>
       );
     }
@@ -33,8 +33,7 @@ const mapStateToProps = state => ({
 // map redux actions to component props, so the component can call them
 const mapActionsToProps = (dispatch, props) => {
   return bindActionCreators({
-    getData: getData,
-    getPrices: getPrices
+    getData: getData
   }, dispatch);
 };
 
