@@ -22,18 +22,13 @@ class PricesTable extends Component {
           </tr>
         </thead>
         <tbody>
-          {prices && Object.values(prices).forEach(price => {
-            // this logs the desired values to be renderes
-            console.log(price.description, `£ ${String(price.amount.toFixed(2))}`, price.basis);
-            // really can't understand why this isn't rendering..
-            return (
-              <tr>
-                <td>{price.description}</td>
-                <td>{`£ ${String(price.amount.toFixed(2))}`}</td>
-                <td>{price.basis}</td>
-              </tr>
-            )
-          })}
+          {Object.values(prices).map(price => (
+            <tr>
+              <td>{price.description}</td>
+              <td>{`£ ${String(price.amount.toFixed(2))}`}</td>
+              <td>{price.basis}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     );
