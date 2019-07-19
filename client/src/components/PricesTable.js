@@ -13,7 +13,7 @@ class PricesTable extends Component {
     // destructure the data
     const { prices } = this.props;
     return (
-      <table>
+      <table id="prices_table">
         <thead>
           <tr>
             <th>Description</th>
@@ -22,8 +22,8 @@ class PricesTable extends Component {
           </tr>
         </thead>
         <tbody>
-          {Object.values(prices).map(price => (
-            <tr>
+          {Object.values(prices).map((price, key) => (
+            <tr key={key}>
               <td>{price.description}</td>
               <td>{`£ ${String(price.amount.toFixed(2))}`}</td>
               <td>{price.basis}</td>
