@@ -12,7 +12,6 @@ class PricesTable extends Component {
   render() {
     // destructure the data
     const { prices } = this.props;
-    Object.values(prices).forEach(price => console.log(price.description))
     return (
       <table>
         <thead>
