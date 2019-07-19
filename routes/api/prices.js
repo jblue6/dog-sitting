@@ -18,8 +18,9 @@ router.get("/", (req, res) => {
 // @access Private
 router.post("/", (req, res) => {
     const newPrices = new Prices({
-        title: req.body.title,
-        value: req.body.value
+        description: req.body.description,
+        amount: req.body.amount,
+        basis: req.body.basis
     });
     newPrices.save().then(prices => res.json(prices));
 });

@@ -4,13 +4,16 @@ const Schema = mongoose.Schema;
 
 // create schema
 const PricesSchema = new Schema({
-  title: {
+  description: {
     type: String,
     required: true
   },
-  value: {
-    type: String,
+  amount: {
+    type: Number,
     required: true
+  },
+  basis: {
+    type: String,
   },
   dateEdited: {
     type: Date,
