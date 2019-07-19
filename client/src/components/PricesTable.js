@@ -10,9 +10,8 @@ class PricesTable extends Component {
   }
 
   render() {
-    // don't try and render until the data has loaded
+    // destructure the data
     const { prices } = this.props;
-    console.log(prices);
     Object.values(prices).forEach(price => console.log(price.description))
     return (
       <table>
@@ -24,13 +23,18 @@ class PricesTable extends Component {
           </tr>
         </thead>
         <tbody>
-          {Object.values(prices).forEach(price => (
-            <tr>
-              <td>{price.description}</td>
-              <td>{price.amount}</td>
-              <td>{price.basis}</td>
-            </tr>
-          ))}
+          {prices && Object.values(prices).forEach(price => {
+            // this logs the desired values to be renderes
+            console.log(price.description, `£ ${String(price.amount.toFixed(2))}`, price.basis);
+            // really can't understand why this isn't rendering..
+            return (
+              <tr>
+                <td>{price.description}</td>
+                <td>{`£ ${String(price.amount.toFixed(2))}`}</td>
+                <td>{price.basis}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     );
