@@ -13,7 +13,7 @@ class PricesTable extends Component {
     // destructure the data
     const { prices } = this.props;
     return (
-      <table id="prices_table">
+      <table className="prices_table">
         <thead>
           <tr>
             <th>Description</th>
