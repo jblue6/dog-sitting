@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getData } from "../actions/dataActions";
-import { bindActionCreators } from "redux"
+import { bindActionCreators } from "redux";
 import PricesTable from "./PricesTable";
+import ContactsTable from "./ContactsTable";
 import PropTypes from "prop-types";
 
 class AppBody extends Component {
@@ -14,11 +15,12 @@ class AppBody extends Component {
     const { data } = this.props;
     return (
       <div>
-        <h1>{data.Title}</h1>
-        <div>
+        <h1 style={{ textAlign: "left" }}>{data.Title}</h1>
+        <div style={{ textAlign: "left" }}>
           Title loaded from mongodb in the cloud
-          </div>
+        </div>
         <PricesTable />
+        <ContactsTable />
       </div>
     );
   }
@@ -36,9 +38,12 @@ const mapStateToProps = state => ({
 
 // map redux actions to component props, so the component can call them
 const mapActionsToProps = (dispatch, props) => {
-  return bindActionCreators({
-    getData: getData
-  }, dispatch);
+  return bindActionCreators(
+    {
+      getData: getData
+    },
+    dispatch
+  );
 };
 
 export default connect(

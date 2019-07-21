@@ -21,6 +21,7 @@ mongoose
 // use routes
 app.use("/api/data", require("./routes/api/data"));
 app.use("/api/prices", require("./routes/api/prices"));
+app.use("/api/contactDetails", require("./routes/api/contactDetails"));
 
 // serve static assets if in production
 if (process.env.NODE_ENV === "production") {

@@ -1,38 +1,30 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getPrices } from "../actions/pricesActions";
+import { getContactDetails } from "../actions/contactDetailsActions";
 import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { Table } from "reactstrap";
 
-class PricesTable extends Component {
+class ContactsTable extends Component {
   componentDidMount() {
-    this.props.getPrices();
+    this.props.getContactDetails();
   }
 
   render() {
     // destructure the data
-    const { prices } = this.props;
+    const { contactDetails } = this.props;
     return (
       <Table
-        className="prices_Table"
-        striped
+        className="contacts_table"
+        borderless
         size="sm"
-        style={{ width: "400px", marginTop: "50px" }}
+        style={{ width: "300px", marginTop: "50px" }}
       >
-        <thead>
-          <tr>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Basis</th>
-          </tr>
-        </thead>
         <tbody>
-          {Object.values(prices).map((price, key) => (
+          {Object.values(contactDetails).map((contactDetail, key) => (
             <tr key={key}>
-              <td style={{ textAlign: "left" }}>{price.description}</td>
-              <td>{`£ ${String(price.amount.toFixed(2))}`}</td>
-              <td>{price.basis}</td>
+              <td style={{ textAlign: "left" }}>{contactDetail.type}</td>
+              <td>{contactDetail.value}</td>
             </tr>
           ))}
         </tbody>
@@ -41,21 +33,21 @@ class PricesTable extends Component {
   }
 }
 
-PricesTable.propTypes = {
-  getPrices: PropTypes.func.isRequired,
-  prices: PropTypes.object.isRequired
+ContactsTable.propTypes = {
+  getContactDetails: PropTypes.func.isRequired,
+  contactDetails: PropTypes.object.isRequired
 };
 
 // map the state of the store to compoennts props so the component can access them
 const mapStateToProps = state => ({
-  prices: state.prices
+  contactDetails: state.contactDetails
 });
 
 // map redux actions to component props, so the component can call them
 const mapActionsToProps = (dispatch, props) => {
   return bindActionCreators(
     {
-      getPrices: getPrices
+      getContactDetails: getContactDetails
     },
     dispatch
   );
@@ -64,4 +56,4 @@ const mapActionsToProps = (dispatch, props) => {
 export default connect(
   mapStateToProps,
   mapActionsToProps
-)(PricesTable);
+)(ContactsTable);
