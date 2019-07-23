@@ -23,8 +23,8 @@ class ContactsTable extends Component {
         <tbody>
           {Object.values(contactDetails).map((contactDetail, key) => (
             <tr key={key}>
-              <td style={{ textAlign: "left" }}>{contactDetail.type}</td>
-              <td>{contactDetail.value}</td>
+              <td style={{ textAlign: "left", color: "white" }}>{contactDetail.type}</td>
+              <td style={{ textAlign: "left", color: "white" }}>{contactDetail.value}</td>
             </tr>
           ))}
         </tbody>
