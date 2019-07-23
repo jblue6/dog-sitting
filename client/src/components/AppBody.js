@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { getData } from "../actions/dataActions";
 import { bindActionCreators } from "redux";
 import PricesTable from "./PricesTable";
-import ContactsTable from "./ContactsTable";
 import PropTypes from "prop-types";
 
 class AppBody extends Component {
@@ -20,7 +19,6 @@ class AppBody extends Component {
           Title loaded from mongodb in the cloud
         </div>
         <PricesTable />
-        <ContactsTable />
       </div>
     );
   }
