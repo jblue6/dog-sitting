@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Navbar, Nav, Container } from "reactstrap";
+import { Navbar, Container } from "reactstrap";
 import ContactsTable from "./ContactsTable";
 
 class AppFooter extends Component {

@@ -15,7 +15,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-class AppNavBar extends Component {
+class LoginNavBar extends Component {
   state = {
     isOpen: false
   };
@@ -47,7 +47,7 @@ class AppNavBar extends Component {
                       Github
                     </DropdownItem>
                     <DropdownItem>
-                      <Link to="/login">Login</Link>
+                      <Link to="/">Home</Link>
                     </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
@@ -60,4 +60,4 @@ class AppNavBar extends Component {
   }
 }
 
-export default AppNavBar;
+export default LoginNavBar;
