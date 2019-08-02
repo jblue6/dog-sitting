@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getData } from "../actions/dataActions";
+import { getData } from "../../actions/dataActions";
 import { bindActionCreators } from "redux";
 import PricesTable from "./PricesTable";
 import ContactsTable from "./ContactsTable";

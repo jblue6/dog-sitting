@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/jblue6/dog-sitting#readme",
   "dependencies": {
+    "add": "^2.0.6",
     "concurrently": "^4.1.1",
     "config": "^3.2.0",
     "express": "^4.17.1",

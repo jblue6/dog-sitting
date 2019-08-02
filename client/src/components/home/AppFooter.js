@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {
-  Navbar
+  Navbar,
+  Nav,
+  Container
 } from "reactstrap";
 import ContactsTable from "./ContactsTable"
 
@@ -19,7 +21,11 @@ class AppFooter extends Component {
     return (
       <div style={{ position: "absolute", bottom: 0, width: "100%" }}>
         <Navbar color="dark" dark expand="sm">
-          <ContactsTable />
+          <Container>
+            <Nav>
+              <ContactsTable />
+            </Nav>
+          </Container>
         </Navbar>
       </div>
     );

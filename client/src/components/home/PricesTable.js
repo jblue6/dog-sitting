@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getPrices } from "../actions/pricesActions";
+import { getPrices } from "../../actions/pricesActions";
 import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { Table } from "reactstrap";

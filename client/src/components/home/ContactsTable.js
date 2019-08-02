@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getContactDetails } from "../actions/contactDetailsActions";
+import { getContactDetails } from "../../actions/contactDetailsActions";
 import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { Table } from "reactstrap";
