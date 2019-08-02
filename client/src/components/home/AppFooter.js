@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import {
-  Navbar,
-  Nav,
-  Container
-} from "reactstrap";
-import ContactsTable from "./ContactsTable"
+
+import { Navbar, Nav, Container } from "reactstrap";
+import ContactsTable from "./ContactsTable";
 
 class AppFooter extends Component {
   state = {
@@ -22,6 +19,7 @@ class AppFooter extends Component {
       <div style={{ position: "absolute", bottom: 0, width: "100%" }}>
         <Navbar color="dark" dark expand="sm">
           <Container>
+<<<<<<< HEAD:client/src/components/home/AppFooter.js
             <Nav>
               <ContactsTable />
             </Nav>

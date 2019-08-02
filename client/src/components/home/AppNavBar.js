@@ -27,7 +27,7 @@ class AppNavBar extends Component {
 
   render() {
     return (
-      <div >
+      <div>
         <Navbar color="dark" dark expand="sm" className="mb-5">
           <Container>
             <NavbarBrand href="/">Dog Sitting</NavbarBrand>
@@ -37,16 +37,15 @@ class AppNavBar extends Component {
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
                     Menu
-                </DropdownToggle>
+                  </DropdownToggle>
                   <DropdownMenu right>
-                    <DropdownItem href="https://github.com/jblue6/dog-sitting"
+                    <DropdownItem
+                      href="https://github.com/jblue6/dog-sitting"
                       target="_blank"
                     >
                       Github
-                  </DropdownItem>
-                    <DropdownItem href="/login">
-                      Login
-                  </DropdownItem>
+                    </DropdownItem>
+                    <DropdownItem href="/login">Login</DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </Nav>

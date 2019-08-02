@@ -18,13 +18,13 @@ class ContactsTable extends Component {
         className="contacts_table"
         borderless
         size="sm"
-        style={{ width: "300px", marginTop: "50px" }}
+        style={{ width: "300px", marginTop: "10px" }}
       >
         <tbody>
           {Object.values(contactDetails).map((contactDetail, key) => (
             <tr key={key}>
-              <td style={{ textAlign: "left", color: "white" }}>{contactDetail.type}</td>
-              <td style={{ textAlign: "left", color: "white" }}>{contactDetail.value}</td>
+              <td style={fontStyle}>{contactDetail.type}</td>
+              <td style={fontStyle}>{contactDetail.value}</td>
             </tr>
           ))}
         </tbody>
@@ -32,6 +32,8 @@ class ContactsTable extends Component {
     );
   }
 }
+
+const fontStyle = { textAlign: "left", color: "white", fontSize: "12px" };
 
 ContactsTable.propTypes = {
   getContactDetails: PropTypes.func.isRequired,
