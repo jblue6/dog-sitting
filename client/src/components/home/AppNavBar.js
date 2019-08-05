@@ -5,13 +5,9 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  //NavItem,
+  NavItem,
   Container,
-  //NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
+  NavLink
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -35,27 +31,21 @@ class AppNavBar extends Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav caret>
-                    Menu
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem
-                      href="https://github.com/jblue6/dog-sitting"
-                      target="_blank"
-                    >
-                      Github
-                    </DropdownItem>
-                    <DropdownItem>
-                      <Link to="/login">Login</Link>
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
+                <NavItem>
+                  <NavLink tag={Link} to="/login">
+                    Login
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="https://github.com/jblue6/dog-sitting" target="_blank">
+                    Github
+                  </NavLink>
+                </NavItem>
               </Nav>
             </Collapse>
           </Container>
-        </Navbar>
-      </div>
+        </Navbar >
+      </div >
     );
   }
 }
