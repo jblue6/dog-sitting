@@ -14,10 +14,8 @@ function auth(req, res, next) {
   try {
     // Verify token
     const decoded = jwt.verify(token, config.get("jwtSecret"));
-    console.log(decoded);
     // Add user from payload
     req.user = decoded;
-    console.log(req.user);
     next();
   } catch (e) {
     res.status(400).json({ msg: "Token is not valid" });

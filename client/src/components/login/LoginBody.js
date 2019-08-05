@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import { Container } from "reactstrap";
-import LoginNavBar from "./LoginNavBar";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
