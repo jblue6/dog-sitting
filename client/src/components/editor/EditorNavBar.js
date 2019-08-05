@@ -23,7 +23,7 @@ class LoginNavBar extends Component {
 
   static propTypes = {
     auth: PropTypes.object.isRequired
-  }
+  };
 
   toggle = () => {
     this.setState({
@@ -38,23 +38,21 @@ class LoginNavBar extends Component {
       <Fragment>
         <NavItem>
           <span className="navbar-text mr-3">
-            <strong>
-              {user ? `Welcome ${user.name}` : ""}
-            </strong>
+            <strong>{user ? `Welcome ${user.name}` : ""}</strong>
           </span>
         </NavItem>
         <NavItem>
           <Logout />
         </NavItem>
       </Fragment>
-    )
+    );
     const guestLinks = (
       <Fragment>
         <NavItem>
           <LoginModal />
         </NavItem>
       </Fragment>
-    )
+    );
     return (
       <div>
         <Navbar color="dark" dark expand="sm" className="mb-5">
@@ -70,7 +68,10 @@ class LoginNavBar extends Component {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="https://github.com/jblue6/dog-sitting" target="_blank">
+                  <NavLink
+                    href="https://github.com/jblue6/dog-sitting"
+                    target="_blank"
+                  >
                     Github
                   </NavLink>
                 </NavItem>
@@ -85,7 +86,7 @@ class LoginNavBar extends Component {
 
 const mapStateToProps = state => ({
   auth: state.auth
-})
+});
 
 export default connect(
   mapStateToProps,

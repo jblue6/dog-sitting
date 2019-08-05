@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Switch } from "react-router"
+import { Switch } from "react-router";
 import { Provider } from "react-redux";
 import store from "./store";
 
 import Home from "./components/home/Home";
-import Login from "./components/login/Login";
+import Editor from "./components/editor/Editor";
 
 import { loadUser } from "./actions/authActions";
 
@@ -24,7 +24,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path={"/"} component={Home} />
-            <Route path={"/login"} component={Login} />
+            <Route path={"/editor"} component={Editor} />
           </Switch>
         </Router>
       </Provider>

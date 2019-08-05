@@ -32,20 +32,23 @@ class AppNavBar extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink tag={Link} to="/login">
-                    Login
+                  <NavLink tag={Link} to="/editor">
+                    Edit
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="https://github.com/jblue6/dog-sitting" target="_blank">
+                  <NavLink
+                    href="https://github.com/jblue6/dog-sitting"
+                    target="_blank"
+                  >
                     Github
                   </NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
           </Container>
-        </Navbar >
-      </div >
+        </Navbar>
+      </div>
     );
   }
 }
