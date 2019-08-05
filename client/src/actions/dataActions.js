@@ -8,16 +8,10 @@ export const getData = () => dispatch => {
     .then(res => {
       dispatch({
         type: GET_DATA,
-        payload: manipulateData(res.data)
+        payload: res.data
       });
     })
     .catch(err => {
       console.log(err);
     });
-};
-
-const manipulateData = data => {
-  let obj = {};
-  data.forEach((item, index) => obj[item.title] = item.value);
-  return obj;
 };

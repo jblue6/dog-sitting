@@ -13,6 +13,7 @@ class PricesTable extends Component {
   render() {
     // destructure the data
     const { prices } = this.props;
+    console.log(prices);
     return (
       <Table
         className="prices_Table"

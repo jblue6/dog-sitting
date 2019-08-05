@@ -14,8 +14,17 @@ class DataEditor extends Component {
   }
 
   render() {
-    console.log(this.props.data);
-    return <div>Rendered from new element</div>;
+    let { data } = this.props;
+    return (
+      <form>
+        {Object.values(data).map((item, key) => (
+          <p key={key}>
+            <label>{item.title}</label>
+            <input value={item.value} />
+          </p>
+        ))}
+      </form>
+    );
   }
 }
 
