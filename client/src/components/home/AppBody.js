@@ -22,9 +22,7 @@ class AppBody extends Component {
     return (
       <div>
         <h1 style={{ textAlign: "left" }}>{dataObj.Title}</h1>
-        <div style={{ textAlign: "left" }}>
-          Title loaded from mongodb in the cloud
-        </div>
+        <div style={{ textAlign: "left" }}>{dataObj.body}</div>
         <PricesTable />
       </div>
     );

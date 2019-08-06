@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getData } from "../../actions/dataActions";
 import { bindActionCreators } from "redux";
+import { FormGroup, Label, Input } from "reactstrap";
 
 class DataEditor extends Component {
   static propTypes = {
@@ -16,16 +17,25 @@ class DataEditor extends Component {
   render() {
     let { data } = this.props;
     return (
-      <form>
+      <Fragment>
         {Object.values(data).map((item, key) => (
-          <p key={key}>
-            <label>{item.title}</label>
-            <input value={item.value} />
-          </p>
+          <FormGroup key={key}>
+            <Label for={item.title}>{capitalize(item.title)}</Label>
+            <Input
+              type={item.title === "Title" ? "text" : "textarea"}
+              name={item.title}
+              id={item.title}
+              defaultValue={item.value}
+            />
+          </FormGroup>
         ))}
-      </form>
+      </Fragment>
     );
   }
+}
+
+function capitalize(string) {
+  return string.substring(0, 1).toUpperCase() + string.substring(1);
 }
 
 const mapStateToProps = state => ({

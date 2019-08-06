@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Container } from "reactstrap";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Form, Button } from "reactstrap";
 
 import DataEditor from "./DataEditor";
 
@@ -13,12 +14,17 @@ class LoginBody extends Component {
   };
 
   render() {
-    const { isAuthenticated, user } = this.props.auth;
+    const { isAuthenticated } = this.props.auth;
 
     const signedIn = (
       <Fragment>
-        <h4>{user ? `Welcome ${user.name}` : ""}</h4>
-        <DataEditor />
+        <Form>
+          <h4>Home Page Text</h4>
+          <DataEditor />
+          <h4>Price List</h4>
+          <h4>Contact Details</h4>
+          <Button>Submit</Button>
+        </Form>
       </Fragment>
     );
     const notSignedIn = (
