@@ -9,7 +9,7 @@ const Data = require("../../models/Data");
 // @access Public
 router.get("/", (req, res) => {
   Data.find()
-    .sort({ dateEdited: -1 })
+    .sort({ dateEdited: 1 })
     .then(datas => res.json(datas));
 });
 
